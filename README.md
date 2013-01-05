@@ -83,8 +83,8 @@ $highcharts->newScatterChart();
 $highcharts->newSplineChart();
 
 $highcharts->newAreaRangeChart();
-$highcharts->AreaSplineRangeChart();
-$highcharts->ColumnRangeChart();
+$highcharts->newAreaSplineRangeChart();
+$highcharts->newColumnRangeChart();
 ```
 
 Last three chart types requires `highcharts-more.js`. For "special" charts (like combining more than one chart) you can
