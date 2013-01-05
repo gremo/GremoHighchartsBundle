@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>downloadJPEG</source>
+                <target>Scarica immagine JPEG</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>downloadPDF</source>
+                <target>Scarica documento PDF</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>downloadPNG</source>
+                <target>Scarica immagine PNG</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>downloadSVG</source>
+                <target>Scarica immagine vettoriale SVG</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>exportButtonTitle</source>
+                <target>Esporta immagine raster o vettoriale</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>loading</source>
+                <target>Caricamento...</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>months.january</source>
+                <target>Gennaio</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>months.february</source>
+                <target>Febbraio</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>months.march</source>
+                <target>Marzo</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>months.april</source>
+                <target>Aprile</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>months.may</source>
+                <target>Maggio</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>months.june</source>
+                <target>Giugno</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>months.july</source>
+                <target>Luglio</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>months.august</source>
+                <target>Agosto</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>months.september</source>
+                <target>Settembre</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>months.october</source>
+                <target>Ottobre</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>months.november</source>
+                <target>Novembre</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>months.december</source>
+                <target>Dicembre</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>printButtonTitle</source>
+                <target>Stampa il grafico</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>resetZoom</source>
+                <target>Reimposta zoom</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>resetZoomTitle</source>
+                <target>Reimposta zoom 1:1</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>shortMonths.jan</source>
+                <target>Gen</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>shortMonths.feb</source>
+                <target>Feb</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>shortMonths.mar</source>
+                <target>Mar</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>shortMonths.apr</source>
+                <target>Apr</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>shortMonths.may</source>
+                <target>Mag</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>shortMonths.jun</source>
+                <target>Giu</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>shortMonths.jul</source>
+                <target>Lug</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>shortMonths.aug</source>
+                <target>Ago</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>shortMonths.sep</source>
+                <target>Set</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>shortMonths.oct</source>
+                <target>Ott</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>shortMonths.nov</source>
+                <target>Nov</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>shortMonths.dic</source>
+                <target>Dic</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>weekdays.sunday</source>
+                <target>Domenica</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>weekdays.monday</source>
+                <target>Lunedì</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>weekdays.tuesday</source>
+                <target>Martedì</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>weekdays.wednesday</source>
+                <target>Mercoledì</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>weekdays.thursday</source>
+                <target>Giovedì</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>weekdays.friday</source>
+                <target>Venerdì</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>weekdays.saturday</source>
+                <target>Sabato</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

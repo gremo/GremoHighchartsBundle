@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+                        http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="gremo_highcharts.detector.session.class">Gremo\HighchartsBundle\Detector\SessionLocaleDetector</parameter>
+        <parameter key="gremo_highcharts.detector.request.class">Gremo\HighchartsBundle\Detector\RequestLocaleDetector</parameter>
+        <parameter key="gremo_highcharts.options_provider.chain.class">Gremo\HighchartsBundle\Provider\ChainOptionsProvider</parameter>
+        <parameter key="gremo_highcharts.class">Gremo\HighchartsBundle\Highcharts</parameter>
+    </parameters>
+
+    <services>
+        <service id="gremo_highcharts.detector.session" public="false" class="%gremo_highcharts.detector.session.class%">
+            <argument type="service" id="service_container" />
+        </service>
+        <service id="gremo_highcharts.detector.request" public="false" class="%gremo_highcharts.detector.request.class%">
+            <argument type="service" id="service_container" />
+        </service>
+        <service id="gremo_highcharts.detector.default" alias="gremo_highcharts.detector.request" public="false" />
+        <service id="gremo_highcharts.options_provider.chain" public="false" class="%gremo_highcharts.options_provider.chain.class%" />
+        <service id="gremo_highcharts.options_provider.lang" public="false" class="Gremo\HighchartsBundle\Provider\LangOptionsProvider">
+            <argument type="service" id="translator" />
+        </service>
+        <service id="gremo_highcharts.options_provider.locale" public="false" class="Gremo\HighchartsBundle\Provider\LocaleOptionsProvider">
+            <argument type="service" id="gremo_highcharts.detector.default" />
+         </service>
+        <service id="gremo_highcharts" class="%gremo_highcharts.class%">
+            <argument type="service" id="gremo_highcharts.options_provider.chain" />
+        </service>
+    </services>
+</container>

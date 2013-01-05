@@ -1,0 +1,27 @@
+{
+    "name": "gremo/highcharts-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Bundle for creating Highcharts charts, fluently and with as little as possible of JavaScript.",
+    "keywords": ["highcharts", "charts"],
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gremo",
+            "homepage": "https://github.com/gremo"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/dependency-injection": ">=2.0.0,<2.3-dev",
+        "symfony/http-kernel": ">=2.0.0,<2.3-dev",
+        "symfony/config": ">=2.0.0,<2.3-dev",
+        "symfony/translation": ">=2.0.0,<2.3-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Gremo\\HighchartsBundle": ""
+        }
+    },
+    "target-dir" : "Gremo/HighchartsBundle"
+}
