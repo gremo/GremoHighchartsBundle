@@ -33,11 +33,14 @@ class ChartPropertyTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($prop, $this->prop);
     }
 
-    public function testMagicSettersIfThereIsArgumentSetsTheValue()
+    /**
+     * @dataProvider getPropertyValues
+     */
+    public function testMagicSettersIfThereIsArgumentSetsTheValue($value)
     {
-        $prop = $this->prop->setVeryLongProperty('foo');
+        $prop = $this->prop->setVeryLongProperty($value);
 
-        $this->assertAttributeSame('foo', 'veryLongProperty', $this->prop);
+        $this->assertAttributeSame($value, 'veryLongProperty', $this->prop);
         $this->assertSame($prop, $this->prop);
     }
 
@@ -77,13 +80,38 @@ class ChartPropertyTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @depends testMagicCreatorCreatesAndReturnsTheChartProperty
-     * @depends testMagicCreatorCreatesTheParentProperty
      * @depends testMagicSettersIfThereIsArgumentSetsTheValue
+     * @depends testMagicCreatorCreatesTheParentProperty
+     * @dataProvider getPropertyValues
      */
-    public function testToStringIgnoresParentProperty()
+    public function testToStringReturnsStringWithSettedValues($value, $stringValue)
+    {
+        $string = (string) $this->prop->newFoo()->setBar($value)->getParent();
+
+        $this->assertContains('foo', $string);
+        $this->assertContains('bar', $string);
+        $this->assertContains($stringValue, $string);
+    }
+
+    /**
+     * @depends testMagicCreatorCreatesAndReturnsTheChartProperty
+     * @depends testMagicSettersIfThereIsArgumentSetsTheValue
+     * @depends testMagicCreatorCreatesTheParentProperty
+     */
+    public function testToStringReturnsStringWithoutParentProperty()
     {
         $this->prop->newFoo()->setBar('foo');
 
         $this->assertNotContains('parent', (string) $this->prop);
+    }
+
+    public function getPropertyValues()
+    {
+        return array(
+            array(false, 'false'),
+            array(null, 'null'),
+            array('foo', 'foo'),
+            array(array(), '[]'),
+        );
     }
 }

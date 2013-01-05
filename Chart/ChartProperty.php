@@ -80,7 +80,7 @@ class ChartProperty
      */
     public function getJsonData()
     {
-        $properties = array_filter(get_object_vars($this));
+        $properties = get_object_vars($this);
 
         // Do not serialize parent property
         unset($properties['parent']);
