@@ -222,7 +222,7 @@ Providers with an higher priority will (nicely and recursively) override options
 [Rendering Charts](#rendering-charts) for actually using default options. Priority attribute is not mandatory.
 
 #### Built-in options providers
-There are two built-in options providers: `lang` and `locale`, disabled by default. The first provids translations for
+There are two built-in options providers: `lang` and `locale`, disabled by default. The first provides translations for
 [`lang` strings](http://api.highcharts.com/highcharts#lang) using [Symfony 2 translation system](http://symfony.com/doc/current/book/translation.html).
 The latter provides decimal and thousands separators based on the current locale, using [PHP intl extension](http://php.net/manual/en/book.intl.php).
 
