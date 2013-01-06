@@ -222,32 +222,41 @@ Providers with an higher priority will (nicely and recursively) override options
 [Rendering Charts](#rendering-charts) for actually using default options. Priority attribute is not mandatory.
 
 #### Built-in options providers
-There are two built-in options providers: `lang` and `locale`, disabled by default. The first provids translations for
-[`lang` strings](http://api.highcharts.com/highcharts#lang) using [Symfony 2 translation system](http://symfony.com/doc/current/book/translation.html).
-The latter provides decimal and thousands separators based on the current locale, using [PHP intl extension](http://php.net/manual/en/book.intl.php).
-
-Enable built-in providers through the configuration:
+For setting common options, this bundle provides some built-in options providers. If you are fine with default options
+you can use the short form (works for every provider):
 
 ```
 gremo_highcharts:
     options_providers:
-        lang:
-            enabled: true
-            messages_domain: mydomain # default gremo_highcharts
-        locale:
-            enabled: true
-```
-
-If you are fine with default options you can use the short form:
-
-```
-gremo_highcharts:
-    options_providers:
+        credits_disabler: ~
         lang: ~
         locale: ~
+        # ...
 ```
 
-Key reference for `lang` provider, along with default values:
+**credit_disabler**: sets Highcharts credits to off.
+
+```
+gremo_highcharts:
+    options_providers:
+        # ...
+        credits_disabler:
+            enabled: true
+```
+
+**lang**: provides translation for [`lang` strings](http://api.highcharts.com/highcharts#lang) using
+[Symfony 2 translation system](http://symfony.com/doc/current/book/translation.html).
+
+```
+gremo_highcharts:
+    options_providers:
+        # ...
+        lang:
+            enabled: true
+            messages_domain: mydomain # default to gremo_highcharts
+```
+
+Key reference along with default values:
 
 ```
 downloadJPEG: Download JPEG image
@@ -293,6 +302,16 @@ weekdays:
     thursday: Thursday
     friday: Friday
     saturday: Saturday
+```
+
+**locale**: provides decimal and thousands separators based on the current locale, using [PHP intl extension](http://php.net/manual/en/book.intl.php).
+
+```
+gremo_highcharts:
+    options_providers:
+        # ...
+        locale:
+            enabled: true
 ```
 
 ## Rendering charts

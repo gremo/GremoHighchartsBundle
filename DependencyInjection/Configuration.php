@@ -56,10 +56,19 @@ class Configuration implements ConfigurationInterface
                                 ->scalarNode('messages_domain')->defaultValue('gremo_highcharts')->end()
                             ->end()
                         ->end()
+                        ->arrayNode('credits_disabler')
+                            ->addDefaultsIfNotSet()
+                            ->beforeNormalization()
+                                ->ifNull()
+                                ->then(function() { return array('enabled' => true); })
+                            ->end()
+                            ->children()
+                                ->booleanNode('enabled')->defaultFalse()->end()
+                            ->end()
+                        ->end()
                     ->end()
                 ->end()
-            ->end()
-        ;
+            ->end();
 
         return $treeBuilder;
     }

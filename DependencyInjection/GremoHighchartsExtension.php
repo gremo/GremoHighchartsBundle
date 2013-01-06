@@ -53,5 +53,11 @@ class GremoHighchartsExtension extends Extension
             $container->getDefinition('gremo_highcharts.options_provider.locale')
                 ->addTag('gremo_highcharts.options_provider');
         }
+
+        // Add options_provider tag if credits disabler provider is enabled
+        if($config['options_providers']['credits_disabler']['enabled']) {
+            $container->getDefinition('gremo_highcharts.options_provider.credits_disabler')
+                ->addTag('gremo_highcharts.options_provider', array('priority' => -10));
+        }
     }
 }

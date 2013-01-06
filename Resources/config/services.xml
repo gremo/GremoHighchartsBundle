@@ -21,6 +21,7 @@
         </service>
         <service id="gremo_highcharts.detector.default" alias="gremo_highcharts.detector.request" public="false" />
         <service id="gremo_highcharts.options_provider.chain" public="false" class="%gremo_highcharts.options_provider.chain.class%" />
+        <service id="gremo_highcharts.options_provider.credits_disabler" public="false" class="Gremo\HighchartsBundle\Provider\CreditsDisablerOptionsProvider" />
         <service id="gremo_highcharts.options_provider.lang" public="false" class="Gremo\HighchartsBundle\Provider\LangOptionsProvider">
             <argument type="service" id="translator" />
         </service>
