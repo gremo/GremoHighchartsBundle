@@ -42,16 +42,12 @@ class GremoHighchartsExtension extends Extension
         $container->getDefinition('gremo_highcharts.options_provider.lang')
             ->addArgument($config['options_providers']['lang']['messages_domain']);
 
-        // Add options_provider tag if lang provider is enabled
-        if($config['options_providers']['lang']['enabled']) {
-            $container->getDefinition('gremo_highcharts.options_provider.lang')
-                ->addTag('gremo_highcharts.options_provider');
-        }
-
-        // Add options_provider tag if locale provider is enabled
-        if($config['options_providers']['locale']['enabled']) {
-            $container->getDefinition('gremo_highcharts.options_provider.locale')
-                ->addTag('gremo_highcharts.options_provider');
+        // Add the provider tag to each provider enabled through the configuration
+        foreach($config['options_providers'] as $name => $options) {
+            if(true === $options['enabled']) {
+                $container->getDefinition("gremo_highcharts.options_provider.$name")
+                    ->addTag('gremo_highcharts.options_provider', array('priority' => -10));
+            }
         }
     }
 }
