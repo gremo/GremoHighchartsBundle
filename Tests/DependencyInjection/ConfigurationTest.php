@@ -36,14 +36,20 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $config = $this->processor->processConfiguration($this->configuration, array());
 
         $this->assertArrayHasKey('options_providers', $config);
+
         $this->assertArrayHasKey('lang', $config['options_providers']);
         $this->assertArrayHasKey('enabled', $config['options_providers']['lang']);
         $this->assertFalse($config['options_providers']['lang']['enabled']);
         $this->assertArrayHasKey('messages_domain', $config['options_providers']['lang']);
         $this->assertEquals('gremo_highcharts', $config['options_providers']['lang']['messages_domain']);
+
         $this->assertArrayHasKey('locale', $config['options_providers']);
         $this->assertArrayHasKey('enabled', $config['options_providers']['locale']);
         $this->assertFalse($config['options_providers']['locale']['enabled']);
+
+        $this->assertArrayHasKey('credits_disabler', $config['options_providers']);
+        $this->assertArrayHasKey('enabled', $config['options_providers']['credits_disabler']);
+        $this->assertFalse($config['options_providers']['credits_disabler']['enabled']);
     }
 
     public function testProcessIfLangProviderIsNullEnablesLangProvider()
@@ -104,6 +110,26 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($config['options_providers']['locale']['enabled']);
     }
 
+    public function testProcessIfCreditsDisablerProviderIsNullEnablesLangProvider()
+    {
+        $configs = $this->getFullConfigs();
+        $configs[0]['options_providers']['credits_disabler'] = null;
+
+        $config = $this->processor->processConfiguration($this->configuration, $configs);
+
+        $this->assertTrue($config['options_providers']['credits_disabler']['enabled']);
+    }
+
+    public function testProcessIfCreditsDisablerProviderIsEnabledEnablesLangProvider()
+    {
+        $configs = $this->getFullConfigs();
+        $configs[0]['options_providers']['credits_disabler']['enabled'] = true;
+
+        $config = $this->processor->processConfiguration($this->configuration, $configs);
+
+        $this->assertTrue($config['options_providers']['credits_disabler']['enabled']);
+    }
+
     public function getFullConfigs()
     {
         return array(
@@ -114,6 +140,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
                         'messages_domain' => 'gremo_highcharts'
                     ),
                     'locale' => array(
+                        'enabled' => false
+                    ),
+                    'credits_disabler' => array(
                         'enabled' => false
                     )
                 )
