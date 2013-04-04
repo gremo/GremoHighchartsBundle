@@ -192,7 +192,7 @@ use JMS\DiExtraBundle\Annotation as DI;
  * @DI\Service("my_options_provider")
  * @DI\Tag("gremo_highcharts.options_provider", attributes={"priority"=10})
  */
-class MyOptionsProvider implements ActivationDateProviderInterface
+class MyOptionsProvider implements OptionsProviderInterface
 {
     /**
      * @return array
