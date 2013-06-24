@@ -115,7 +115,7 @@ class Highcharts
      *
      * @return Chart
      */
-    public function newePieChart()
+    public function newPieChart()
     {
         return $this->newChart('pie');
     }

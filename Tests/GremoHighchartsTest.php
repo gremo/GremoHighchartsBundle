@@ -70,7 +70,7 @@ class HighchartsTest extends \PHPUnit_Framework_TestCase
 
     public function testNewPieChart()
     {
-        $this->assertIsChartWithTypeProperty('pie', $this->highcharts->newePieChart());
+        $this->assertIsChartWithTypeProperty('pie', $this->highcharts->newPieChart());
     }
 
     public function testNewScatterChart()
