@@ -90,8 +90,8 @@ class Chart extends ChartProperty
     {
         // Unset empty properties before returing the array
         foreach(array('xAxis', 'yAxis', 'series') as $property) {
-            if(empty($property)) {
-                unset($property);
+            if(empty($this->$property)) {
+                unset($this->$property);
             }
         }
 
