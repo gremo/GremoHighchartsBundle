@@ -104,7 +104,7 @@ Setters `setXxx` are fluent and returns the instance, while `newXxx` methods ret
     ->getParent()
     ->newTitle()
         ->setText('My chart')
-        ->newStlye()
+        ->newStyle()
             ->setColor('#FF00FF')
             ->setFontWeight('bold')
         ->getParent()
