@@ -1,4 +1,5 @@
-# GremoHighchartsBundle [![Build Status](https://secure.travis-ci.org/gremo/GremoHighchartsBundle.png)](http://travis-ci.org/gremo/GremoHighchartsBundle)
+# GremoHighchartsBundle
+[![Build status](https://img.shields.io/travis/gremo/GremoHighchartsBundle.svg?style=flat-square)](https://travis-ci.org/gremo/GremoHighchartsBundle) [![GitHub issues](https://img.shields.io/github/issues/gremo/GremoHighchartsBundle.svg?style=flat-square)](https://github.com/gremo/GremoHighchartsBundle/issues)  [![Latest stable](https://img.shields.io/packagist/v/gremo/highcharts-bundle.svg?style=flat-square)](https://packagist.org/packages/gremo/highcharts-bundle) [![Downloads total](https://img.shields.io/packagist/dt/gremo/highcharts-bundle.svg?style=flat-square)](https://packagist.org/packages/gremo/highcharts-bundle)
 
 Symfony2 Bundle for creating Highcharts charts, fluently and with as little as possible of JavaScript.
 
